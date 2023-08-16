@@ -120,7 +120,7 @@ export default function TimeAllocation1() {
               for="date"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
-              Date1
+              Date
             </label>
             <div className="mt-2 w-full">
               <input
