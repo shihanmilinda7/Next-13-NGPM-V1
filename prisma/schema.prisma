@@ -1,0 +1,116 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema env("DATABASE_URL")
+
+
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model staff{
+  staffid       Int      @id @default(autoincrement())
+  name String   
+  contracttype String   
+  contactno    String   
+  nic String
+  password String
+  createdAt DateTime @default(now())
+}
+
+model user{
+  userid       Int      @id @default(autoincrement())
+  name String   
+  username String   
+  email    String   
+  password String
+  jobrole String
+  company String
+  createdAt DateTime @default(now())
+}
+
+model projects{
+  projectid       Int      @id @default(autoincrement())
+  name String   
+  starteddate String 
+  enddate    String  
+  status String
+}
+
+model timealloc{
+  timeallocid       Int      @id @default(autoincrement())
+  date String   
+  userid String 
+  remark    String  
+}
+
+model timeallocdetails{
+  timeallocdetailid       Int      @id @default(autoincrement())
+  timeallocid Int
+  projectid Int
+  time String   
+  remark    String  
+}
+
+///////////////////////////////////////////////////////
+
+
+model user1{
+  id       String      @id @default(uuid())
+  name String   
+  username String   
+  email    String   
+  password String
+  jobrole String
+  company String
+  createdAt DateTime @default(now())
+}
+
+model user2{
+  id       String      @id @default(uuid())
+  name String   
+  username String   
+  email    String   
+  password String
+  jobrole String
+  company String
+  createdAt DateTime @default(now())
+}
+
+model user3{
+  id       String      @id @default(uuid())
+  name String   
+  username String   
+  email    String   
+  password String
+  jobrole String
+  company String
+  createdAt DateTime @default(now())
+}
+
+model user4{
+  id       String      @id @default(uuid())
+  name String   
+  username String   
+  email    String   
+  password String
+  jobrole String
+  company String
+  createdAt DateTime @default(now())
+}
+
+
+
+
+
+model userview{
+  id       String      @id
+  username String   
+  email    String   
+  password String
+}
